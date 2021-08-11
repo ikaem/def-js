@@ -58,6 +58,82 @@
 
 // console.log('\b'.match(literalBackspace)); //["\b"]
 
-const whiteSpaceOrDigit = /[\s\d]/;
+// const whiteSpaceOrDigit = /[\s\d]/;
 
-console.log(' '.match(whiteSpaceOrDigit)); // [" "]
+// console.log(' '.match(whiteSpaceOrDigit)); // [" "]
+
+// const anyDecimalDigit = /\p{Decimal_Number}/u;
+// console.log('3.2'.match(anyDecimalDigit)); // ["3"]
+
+// const anyNonDecimalDigitCharacter = /\P{Decimal_Number}/u;
+// console.log('T'.match(anyNonDecimalDigitCharacter)); //["T"]
+
+// const anyNumberLikeCharacter = /\p{Number}/u;
+// console.log('¼'.match(anyNumberLikeCharacter)); // [ "¼" ]
+
+// const anyUnicodeCharacter =
+//   /[\p{Alphabetic}\p{Decimal_Number}\p{Mark}\p{Connector_Punctuation}\p{Join_Control}]/u;
+// console.log('!'.match(anyUnicodeCharacter)); //["k"]
+
+// const cyrillicScript = /\p{Script=Cyrillic}/u;
+// console.log('Б'.match(cyrillicScript)); // [ "Б" ]
+
+// const anyTwoDigitNumber = /\d\d/;
+
+// console.log('23'.match(anyTwoDigitNumber)); // [ "23" ]
+
+// const betweenTwoAndFourDigits = /\d{2,4}/;
+// console.log('123'.match(betweenTwoAndFourDigits)); // ["123"]
+
+// const threeCharsOptionalDigit = /\w{3}\d?/;
+// console.log('wa44'.match(threeCharsOptionalDigit)); // [ "wa44" ]
+
+// const spacesArondJava = /\s+java\s+/;
+// console.log(' java  '.match(spacesArondJava)); // [ " java  " ]
+
+// const zeroOrMoreNotBracket = /[^(]*/;
+// console.log('333'.match(zeroOrMoreNotBracket)); // [ "333" ]
+
+// const zeroOrMoreBracket = /[(]*/;
+// console.log('ttt'.match(zeroOrMoreNotBracket)); // [ "ttt" ]
+
+// const nonGreedyA = /a+?/;
+
+// console.log('aaa'.match(nonGreedyA)); // [ "a" ]
+
+// const nonGreedyAB = /a+?b/;
+// console.log('aaab'.match(nonGreedyAB)); // [ "aaab" ]
+
+// const alternativeStrings = /ab|cd|ef/;
+// console.log('cd'.match(alternativeStrings)); // [ "cd" ]
+
+// const threeDigsOrFourLetters = /\d{3}|[a-z]{4}/;
+// console.log('333'.match(threeDigsOrFourLetters)); // [ "333" ]
+
+// const optionalScript = /java(script)?(no)?/;
+// console.log('javascript'.match(optionalScript)); // [ "javascript", "script", undefined ]
+
+// const alternativeSubexpressions = /(ab|cd)+|(ef)/;
+// console.log('ef'.match(alternativeSubexpressions)); // [ "ef", undefined ]
+
+// const lowercaseLettersEndWithDigits = /[a-z]+(\d+)/;
+// console.log('karlo23tss23sag123'.match(lowercaseLettersEndWithDigits)); // [ "karlo23", "23" ]
+
+// const nestedSubexpressions = /([Jj]ava([Ss]cript)?)\sis\s(fun\w*)/;
+
+// const charsInsideQuotes = /['"][^'"]*['"]/;
+// console.log("'my name is karlo'".match(charsInsideQuotes)); // [ "'my name is karlo'" ]
+
+// const charsInsideQuotesSubex = /(['"])[^'"]*['"]/;
+// console.log("'my name is karlo'".match(charsInsideQuotesSubex)); // [ "'my name is karlo'", "'" ]
+
+// const charsInsideQuotesSubexRef = /(['"])[^'"]*\1/;
+// console.log("'my name is karlo'".match(charsInsideQuotesSubexRef)); // [ "'my name is karlo'", "'" ]
+
+// const subexpWNNumbering = /([Jj]ava(?:[Ss]cript)?)\sis\s(fun\w*)/;
+
+const namedCaptureGroupAddress = /(?<city>\w+)(?<state>[A-Z]{2})/;
+
+const namedQuotes = /(?<quote>['"])[^'"]*\k<quote>/;
+
+console.log("'what is'".match(namedQuotes)); // [ "'what is'", "'" ]
